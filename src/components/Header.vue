@@ -1,0 +1,157 @@
+<template lang="en">
+<div class="container">
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <a class="navbar-brand logo" href="#">
+            <img v-bind:src=image>
+            <h2 class="title fluid">RoadRunners-24/7</h2>
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Disabled</a>
+                </li>
+            </ul>
+           
+        </div>
+    </nav>
+
+    <!-- <div class="row header">
+        <div class="col-sm-6">
+            <Logo />
+        </div>
+        <div class="col-sm-6">
+            <Nav />
+        </div>
+    </div> -->
+</div>
+
+
+
+
+
+    
+    
+</template>
+
+
+<script>
+// import Logo from '../components/Logo.vue'
+// import Nav from '../components/Nav.vue'
+import image from '@/assets/cropped-HeaderLeft-1.png'
+
+
+
+export default {
+    name: 'Header',
+    components: {
+   
+    },
+    
+    data: function () {
+        return {
+            image: image
+        }
+    },
+}
+
+</script>
+
+
+<style scoped>
+
+
+/* logo styling */
+.logo{
+    height: fit-content;
+    float: left;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* logo image styling */
+.logo img{
+    text-align: center;
+    width: inherit;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+
+/* customisation for title */
+.title{
+  font-family: barbatrick;
+  font-size: 4vw;
+  letter-spacing: 5px;
+  color: rgb(77, 75, 75);
+  margin: 0;
+  position: relative;
+  transform: translateY(35%);    
+}
+
+.nav-link{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.navbar-nav{
+    float: right;
+}
+
+.navbar-collapse{
+    -webkit-box-shadow: none;
+    box-shadow: none;    
+}
+
+.navbar{
+    margin-bottom: 0px;
+}
+
+@media screen and (max-width: 991px) {
+    .navbar-brand {
+        width: 100%;
+    }
+
+    .navbar-brand img{
+        margin: 0 auto;
+    }
+
+    .navbar-toggler{
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+
+    .navbar-collapse{
+        margin: 0 auto;
+    }
+
+    .navbar-nav{
+        float: none;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .title{
+        font-size: 20px;
+    }    
+}
+
+@media screen and (max-width: 370px) {
+ 
+}
+
+
+
+</style>

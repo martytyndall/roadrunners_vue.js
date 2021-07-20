@@ -1,18 +1,73 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+<Carousel />
+
+<div class="container">
+  <hr>
+  <div class="col-sm-8">
+    <Main />
   </div>
+
+  <div class="col-sm-4">
+    <Aside />
+  </div>
+
+
+
+</div>
+
+
+
+
+<div class="col-sm-4"></div>
+
+<div class="col-sm-12"></div>
+
+<div class="col-sm-12"></div>
+
+
+
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Carousel from '@/components/Carousel'
+import Main from '@/components/Main'
+import Aside from '@/components/Aside'
+
 
 export default {
   name: 'Home',
+
   components: {
-    HelloWorld
-  }
+    Carousel,
+    Main,
+    Aside,
+  },
+
+  data: function (){
+    return {
+      
+      
+    }
+  },
+
+  methods: {
+  },
+
 }
+
 </script>
+
+<style scoped>
+
+hr{
+  height: 2px;
+  color: white;
+  opacity: .99;
+  
+}
+
+
+
+</style>
