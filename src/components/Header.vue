@@ -27,14 +27,6 @@
         </div>
     </nav>
 
-    <!-- <div class="row header">
-        <div class="col-sm-6">
-            <Logo />
-        </div>
-        <div class="col-sm-6">
-            <Nav />
-        </div>
-    </div> -->
 </div>
 
 
@@ -47,8 +39,7 @@
 
 
 <script>
-// import Logo from '../components/Logo.vue'
-// import Nav from '../components/Nav.vue'
+
 import image from '@/assets/cropped-HeaderLeft-1.png'
 
 
