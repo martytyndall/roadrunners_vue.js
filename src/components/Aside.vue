@@ -2,12 +2,14 @@
     <div>
 
         <div class="top">
-            <img v-bind:src=image>
+            <VRMform />
         </div>
 
         <div class="bottom">
-            <VRMform />
+            <img v-bind:src=image>
         </div>
+
+        
                     
     </div>
 </template>
@@ -35,6 +37,10 @@ export default {
 }
 </script>
 <style scoped>
+
+.bottom{
+    margin-top: 20px;
+}
 
 .car-parts-form {
     /* position: absolute; */
