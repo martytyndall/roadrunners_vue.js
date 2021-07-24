@@ -1,22 +1,24 @@
 <template>
-<Overlay />
-<Header />
-
-  
+  <!-- <Overlay /> -->
+  <Header />
   <router-view/>
+  <Footer />
 </template>
 
 
 <script>
 // @ is an alias to /src
 import Header from '@/components/Header'
-import Overlay from '@/components/Overlay'
+// import Overlay from '@/components/Overlay'
+import Footer from '@/components/Footer'
 
 export default {
   components: {
     Header,
-    Overlay,
+    // Overlay,
+    Footer,
     },
+
     data: function(){
       return {
         
@@ -40,14 +42,15 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: white;
 }
 
 #app{
-  background-image: url(../src/assets/car-tyres-63928_1920.jpg);
+  background: linear-gradient(rgba(59, 59, 59, 0.815), rgba(59, 59, 59, 0.815)), url(../src/assets/car-tyres-63928_1920.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 1750px;
+  height: fit-content;
+  
 }
 
 

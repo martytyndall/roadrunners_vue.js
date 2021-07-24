@@ -6,6 +6,8 @@
   <hr>
   <div class="col-sm-8">
     <Main />
+    <hr><br>
+    <FindUs />
   </div>
 
   <div class="col-sm-4">
@@ -34,6 +36,7 @@
 import Carousel from '@/components/Carousel'
 import Main from '@/components/Main'
 import Aside from '@/components/Aside'
+import FindUs from '@/components/FindUs'
 
 
 export default {
@@ -43,6 +46,7 @@ export default {
     Carousel,
     Main,
     Aside,
+    FindUs,
   },
 
   data: function (){

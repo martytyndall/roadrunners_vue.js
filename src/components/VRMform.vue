@@ -12,7 +12,7 @@
             </form>
 
             <hr>
-            <div class="selection-container" id="selection-container" >
+            <!-- <div class="selection-container" id="selection-container" >
                 <h5>OR</h5>
                 <h5>SELECT YOUR VEHICLE VEHICLE MANUALLY</h5>
 
@@ -39,11 +39,10 @@
                     <button class="btn-primary small bottom-right" type="submit" >GO</button>
                 </form>
 
-            </div>
+            </div> -->
 
-            <div class="your-vehicle hide" id="your-vehicle" >
-                <br>
-                <button class="btn-primary">CLICK TO SEE TYRES</button>               
+            <div class="your-vehicle hide" id="your-vehicle" > 
+                
             </div>
 
             <div class="error-msg hide">
@@ -78,37 +77,25 @@ export default {
                 make: '',
                 model: '',
                 buildYear: '',
-            }          
+                frontTyres: '',
+                rearTyres: '',
+            },
         }
-    },
-
-    components:{
-
     },
 
     methods: {
         // extracts the vehicle details from the returned vehicle object
-        getData(data){
+        extractData(data){
             console.log(data);
 
-            for (const [key] of Object.entries(data)){
-                for (const [key2] of Object.entries(data[key])){
-                    for (const [key3] of Object.entries(data[key][key2])){
-                        for (const [key4, value4] of Object.entries(data[key][key2][key3])){
-                            if (key4 == 'Make') {
-                                this.make = value4                                
-                            } else if (key4 == 'Model'){
-                                this.model = value4
-                            } else if (key4 == 'BuildYear'){
-                                this.buildYear = value4                            
-                            }
-                        }                    
-                    }
-                }                
-            }            
-            
-                console.log(this.make, this.model, this.buildYear);
-                this.displayVehicleMessage(this.make, this.model, this.buildYear)
+            this.make = data.Response.DataItems.VehicleDetails.Make
+            this.model = data.Response.DataItems.TyreDetails.RecordList[0].Vehicle.ModelName
+            this.year = data.Response.DataItems.VehicleDetails.BuildYear
+            this.frontTyres = data.Response.DataItems.TyreDetails.RecordList[0].Front.Tyre.Size
+            this.rearTyres = data.Response.DataItems.TyreDetails.RecordList[0].Rear.Tyre.Size
+
+            this.displayVehicleDetails(this.make, this.model, this.year, this.frontTyres, this.rearTyres)
+
         },
 
 
@@ -122,26 +109,26 @@ export default {
 
             axios.get("https://uk1.ukvehicledata.co.uk/api/datapackage/TyreData?v=2&api_nullitems=1&auth_apikey=4e2c7e5a-ee9e-49a7-baa9-252fec52b482&user_tag=&key_VRM=" + trimmedVrm)
             .then((response) => {
-                this.getData(response.data);
+                this.extractData(response.data);
             })
             .catch(function(error) {
                 console.log(error);
-            })            
+            })           
         },
 
-        displayVehicleMessage(make, model, year){
-            // adds and removes hide class 
-            document.getElementById("selection-container").classList.add("hide");
-            document.getElementById("your-vehicle").classList.remove("hide");
-
-            
+        displayVehicleDetails(make, model, year, frontTyres, rearTyres){
+            // removes hide class 
+            document.getElementById("your-vehicle").classList.remove("hide");            
 
             let msgBox = document.getElementById("your-vehicle")
 
             msgBox.innerHTML = "<h2>Your Vehicle</h2>"
-            msgBox.innerHTML += "<h5>Make: </h5>" + make + "<br>"
-            msgBox.innerHTML += "<h5>Model: </h5>" + model + "<br>"
-            msgBox.innerHTML += "<h5>Year: </h5>" + year + "<br>"           
+            msgBox.innerHTML += "<h3>Make: </h3>" + make + "<br>"
+            msgBox.innerHTML += "<h3>Model: </h3>" + model + "<br>"
+            msgBox.innerHTML += "<h3>Year: </h3>" + year + "<br><br>"
+            msgBox.innerHTML += "<h2>Tyres:</h2>"
+            msgBox.innerHTML += "<h3>Front :</h3>" + frontTyres + "<br>"
+            msgBox.innerHTML += "<h3>Rear:</h3>" + rearTyres + "<br>"
         }
 
 
@@ -157,7 +144,7 @@ export default {
 
 .vehicle-container{
     margin-top: 50px;
-    background-color: white;
+    background-color: grey;
     border: 1px solid blue;
     border-radius: 10px;
     padding: 20px;
@@ -249,5 +236,7 @@ export default {
 .your-vehicle{
     text-align: left;
 }
+
+
 
 </style>

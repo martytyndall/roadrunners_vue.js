@@ -1,4 +1,4 @@
-<template lang="">
+<template lang="en">
     <div>
         
     </div>
@@ -19,8 +19,7 @@ div{
     right: 0;
     bottom: 0;
     background-color: rgba(99, 99, 99, 0.719);
-    height: 2620px;
-    overflow: hidden;
+    height: 100%;
 }
     
 </style>
