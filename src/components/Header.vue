@@ -1,5 +1,6 @@
 <template lang="en">
-<div class="container">
+
+<div class="container header">
     <nav class="navbar navbar-expand-md navbar-dark bg-primary">
         <a class="navbar-brand logo" href="#">
             <img v-bind:src=image>
@@ -11,16 +12,16 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <ul class="navbar-nav mr-auto" >
+                <li class="nav-item" @mouseenter="e => e.target.classList.toggle('nav-item-hover')" @mouseleave="e => e.target.classList.toggle('nav-item-hover')">
+                    <a class="nav-link" href="/">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                <li class="nav-item" @mouseenter="e => e.target.classList.toggle('nav-item-hover')" @mouseleave="e => e.target.classList.toggle('nav-item-hover')">
+                    <a class="nav-link" href="tyresafety">Tyre Safety</a>
                 </li>
                 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Disabled</a>
+                <li class="nav-item" @mouseenter="e => e.target.classList.toggle('nav-item-hover')" @mouseleave="e => e.target.classList.toggle('nav-item-hover')">
+                    <a class="nav-link" href="contact">Contact</a>
                 </li>
             </ul>
            
@@ -52,7 +53,8 @@ export default {
     
     data: function () {
         return {
-            image: image
+            image: image,
+            hover: false,
         }
     },
 }
@@ -61,6 +63,10 @@ export default {
 
 
 <style scoped>
+
+.navbar{
+    border-radius: 5px;
+}
 
 
 /* logo styling */
@@ -92,9 +98,27 @@ export default {
   transform: translateY(35%);    
 }
 
+.nav-item{
+    width: 120px;
+    border-radius: 5px;
+    
+}
+
+.nav-item-hover{
+    background-color: darkblue;
+    animation-name: example;
+    animation-duration: .5s;
+}
+
+@keyframes example {
+  from {background-color: lightblue;}
+  to {background-color: darkblue;}
+}
+
 .nav-link{
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .navbar-nav{
@@ -136,11 +160,13 @@ export default {
 @media screen and (min-width: 767px) {
     .title{
         font-size: 20px;
-    }    
+    }
 }
 
-@media screen and (max-width: 370px) {
- 
+@media screen and (max-width: 767px) {
+    .nav-item{
+        margin: 0 auto;
+    }
 }
 
 

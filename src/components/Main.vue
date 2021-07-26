@@ -1,5 +1,5 @@
 <template lang="en">
-    <div>
+    <div class="about-us">
         <h2>About Us</h2>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta laudantium iusto tenetur excepturi quisquam 
@@ -43,5 +43,7 @@ h2{
 p{
     color: white;
 }
+
+
     
 </style>

@@ -148,13 +148,16 @@ export default {
     border: 1px solid blue;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 0 2px 3px blue;.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  background-color: #2196F3;
-  padding: 10px;
+    box-shadow: 0 0 2px 3px blue;
+}    
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #2196F3;
+    padding: 10px;
 }
-}
+
 
 .vehicle-container input {
     background-color: #FFD800 !important;
@@ -235,6 +238,20 @@ export default {
 
 .your-vehicle{
     text-align: left;
+}
+
+@media screen and (max-width: 991px) {
+    #vrm-input{
+        width: 100%;
+    }
+
+    button{
+        margin-top: 10px;
+    }
+
+    .vehicle-container input{
+        font-size: 24px !important;
+    }
 }
 
 

@@ -3,29 +3,22 @@
 <Carousel />
 
 <div class="container">
-  <hr>
-  <div class="col-sm-8">
-    <Main />
-    <hr><br>
-    <FindUs />
-  </div>
-
-  <div class="col-sm-4">
-    <Aside />
-  </div>
-
-
-
+    <hr>
+    <div class="row">
+        <div class="col-sm-8 main">
+          <Main />
+        </div>
+        <div class="col-sm-4 aside">
+          <Aside />
+        </div>
+    </div>
+    <hr>
+    <div class="row ">
+        <div class="col-sm-12 find-us">
+          <FindUs />
+        </div>
+    </div>
 </div>
-
-
-
-
-<div class="col-sm-4"></div>
-
-<div class="col-sm-12"></div>
-
-<div class="col-sm-12"></div>
 
 
 
@@ -70,6 +63,15 @@ hr{
   color: white;
   opacity: .99;
   
+}
+
+@media screen and (max-width: 767px){
+    .main{
+        width: 100% !important;
+    }
+    .aside{
+        width: 100% !important;
+    }
 }
 
 

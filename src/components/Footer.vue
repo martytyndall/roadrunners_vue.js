@@ -1,13 +1,14 @@
 <template lang="en">
+<br><br>
     <div class="container" v-on:pageLoad="getCurrentYear">
         <div class="row footer bg-primary">
             <div class="col-sm-6 contact">
-                <h1>Contact</h1>
-                <h5>Email: example@aol.com</h5>
-                <h5>Tel: 01234 567 890</h5>
+                <h3>Contact</h3>
+                <h5>Email: contact@example.com</h5>
+                <h5>Tel: 01 234 567 89</h5>
             </div>
             <div class="col-sm-6 opening-times">
-                <h1>Opening Times</h1>
+                <h3>Opening Times</h3>
                 <h5>Monday: 08.00 - 17.00</h5>
                 <h5>Tuesday: 08.00 - 17.00</h5>
                 <h5>Wednesday: 08.00 - 17.00</h5>
@@ -46,8 +47,15 @@ export default {
 </script>
 <style scoped>
 
-.row{
-    position: relative;
+
+h5 {
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
+
+.footer{
+    border-radius: 5px;
+}
+
     
 </style>

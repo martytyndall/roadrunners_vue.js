@@ -3,8 +3,7 @@
         <h1>Find Us</h1>
         <div class="map" id="map">
             <iframe
-                width="600"
-                height="450"
+                
                 style="border:0"
                 loading="lazy"
                 allowfullscreen
@@ -24,6 +23,18 @@ export default {
 <style scoped>
 .map{
     position: relative;
+}
+
+.map iframe {
+    width: 600px;
+    height: 450px;
+}
+
+@media screen and (max-width: 767px){    
+    .map iframe {
+      width: 70vw !important;
+      height: 70vw;
+    }
 }
     
 </style>
