@@ -17,11 +17,11 @@
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item" @mouseenter="e => e.target.classList.toggle('nav-item-hover')" @mouseleave="e => e.target.classList.toggle('nav-item-hover')">
-                    <a class="nav-link" href="tyresafety">Tyre Safety</a>
+                    <a class="nav-link" href="#tyre-safety">Tyre Safety</a>
                 </li>
                 
                 <li class="nav-item" @mouseenter="e => e.target.classList.toggle('nav-item-hover')" @mouseleave="e => e.target.classList.toggle('nav-item-hover')">
-                    <a class="nav-link" href="contact">Contact</a>
+                    <a class="nav-link" href="#contact">Contact</a>
                 </li>
             </ul>
            

@@ -1,5 +1,5 @@
 <template lang="en">
-    <div>
+    <div id="find-us">
         <h1>Find Us</h1>
         <div class="map" id="map">
             <iframe
